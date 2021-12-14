@@ -2,18 +2,28 @@ import request from '@/utils/request'
 
 export function login(data) {
   return request({
-    url: '/vue-element-admin/user/login',
+    url: '/user/login',
     method: 'post',
     data
   })
 }
 
 export function getInfo(token) {
-  return request({
+  return new Promise((resolve, reject) => {
+    resolve({
+      data: {
+        roles: ['admin'],
+        name: 'admin',
+        avatar: 'https://beyondclouds.oss-cn-beijing.aliyuncs.com/avatar/e4738c08-e928-45fc-a745-babee25062f2.png',
+        introduction: '暂无简介'
+      }
+    })
+  })
+  /* return request({
     url: '/vue-element-admin/user/info',
     method: 'get',
     params: { token }
-  })
+  })*/
 }
 
 export function logout() {

@@ -11,12 +11,14 @@ export function isExternal(path) {
 }
 
 /**
+ * 用户名校验
  * @param {string} str
  * @returns {Boolean}
  */
 export function validUsername(str) {
-  const valid_map = ['admin', 'editor']
-  return valid_map.indexOf(str.trim()) >= 0
+  // const valid_map = ['admin', 'editor']
+  // return valid_map.indexOf(str.trim()) >= 0
+  return str.length > 2
 }
 
 /**

@@ -79,7 +79,122 @@ export const constantRoutes = [
         path: 'dashboard',
         component: () => import('@/views/dashboard/index'),
         name: 'Dashboard',
-        meta: { title: 'Dashboard', icon: 'dashboard', affix: true }
+        meta: { title: '控制面板', icon: 'dashboard', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/device',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/device/index'),
+        name: 'device',
+        meta: { title: '设备管理', icon: 'device', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/software',
+    component: Layout,
+    alwaysShow: true,
+    meta: { title: '软件管理', icon: 'software', affix: true },
+    children: [
+      {
+        path: 'group',
+        component: () => import('@/views/documentation/index'),
+        name: 'group',
+        meta: { title: '软件类别', icon: 'software-category', affix: true }
+      },
+      {
+        path: 'package',
+        component: () => import('@/views/documentation/index'),
+        name: 'package',
+        meta: { title: '软件包', icon: 'software-package', affix: true }
+      },
+      {
+        path: 'list',
+        component: () => import('@/views/documentation/index'),
+        name: 'list',
+        meta: { title: '软件列表', icon: 'software-app', affix: true }
+      },
+      {
+        path: 'adapt-rel',
+        component: () => import('@/views/documentation/index'),
+        name: 'adapt-rel',
+        meta: { title: '软件适配关系', icon: 'software-link', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/detect',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/documentation/index'),
+        name: 'detect',
+        meta: { title: '实时侦测', icon: 'detection', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/project',
+    component: Layout,
+    name: '计划拟制',
+    alwaysShow: true,
+    children: [
+      {
+        path: 'index1',
+        component: () => import('@/views/documentation/index'),
+        name: 'index1',
+        meta: { title: '信创整机研产销计划', affix: true }
+      },
+      {
+        path: 'index2',
+        component: () => import('@/views/documentation/index'),
+        name: 'index2',
+        meta: { title: '应用软件迁移适配计划', affix: true }
+      },
+      {
+        path: 'index3',
+        component: () => import('@/views/documentation/index'),
+        name: 'index3',
+        meta: { title: '信创外设适配增补计划', affix: true }
+      },
+      {
+        path: 'index4',
+        component: () => import('@/views/documentation/index'),
+        name: 'index4',
+        meta: { title: '信创替代设备分发工作', affix: false }
+      },
+      {
+        path: 'index5',
+        component: () => import('@/views/documentation/index'),
+        name: 'index5',
+        meta: { title: '信创设备收旧利旧工作', affix: true }
+      }
+    ],
+    meta: { title: '计划拟制', icon: 'project', affix: true }
+  },
+  {
+    path: '/user',
+    component: Layout,
+    alwaysShow: true,
+    meta: { title: '用户管理', icon: 'peoples', affix: true },
+    children: [
+      {
+        path: 'index1',
+        component: () => import('@/views/documentation/index'),
+        name: 'device',
+        meta: { title: '用户管理', icon: 'software-category', affix: true }
+      },
+      {
+        path: 'index2',
+        component: () => import('@/views/documentation/index'),
+        name: 'device',
+        meta: { title: '角色管理', icon: 'software-package', affix: true }
       }
     ]
   },
