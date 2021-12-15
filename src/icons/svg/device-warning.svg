@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <filter id="路径_53" x="5" y="5.4" width="14" height="13.003" filterUnits="userSpaceOnUse">
+      <feOffset dy="1" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feFlood flood-opacity="0.059"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="ic-电脑异常" transform="translate(-6036 -2176)">
+    <path id="路径_56" data-name="路径 56" d="M0,0H24V24H0Z" transform="translate(6036 2176)" fill="none"/>
+    <path id="路径_55" data-name="路径 55" d="M1.6,0H18.4A1.6,1.6,0,0,1,20,1.6V12.4A1.6,1.6,0,0,1,18.4,14H1.6A1.6,1.6,0,0,1,0,12.4V1.6A1.6,1.6,0,0,1,1.6,0Z" transform="translate(6038 2180)" fill="#4b5a74"/>
+    <path id="路径_48" data-name="路径 48" d="M-.5-.5h6L8,2H-3Z" transform="translate(6045.5 2195)" fill="#493f6f"/>
+    <g id="组_52" data-name="组 52" transform="translate(0.4 0.4)">
+      <path id="路径_54" data-name="路径 54" d="M.5,0H16.7a.5.5,0,0,1,.5.5V10.7a.5.5,0,0,1-.5.5H.5a.5.5,0,0,1-.5-.5V.5A.5.5,0,0,1,.5,0Z" transform="translate(6039 2181)" fill="#627684"/>
+      <path id="路径_49" data-name="路径 49" d="M.478,0H16.722A.472.472,0,0,1,17.2.467V10.733a.472.472,0,0,1-.478.467C10.733,10.283,3.889,5.27,0,.467A.472.472,0,0,1,.478,0Z" transform="translate(6039 2181)" fill="#fff" opacity="0.141"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 6036, 2176)" filter="url(#路径_53)">
+      <path id="路径_53-2" data-name="路径 53" d="M-4321.643-254.094h-6.4a.791.791,0,0,1-.695-.4.792.792,0,0,1,.007-.8l3.2-5.4a.793.793,0,0,1,.688-.393.792.792,0,0,1,.688.393l3.2,5.4a.792.792,0,0,1,.007.8A.792.792,0,0,1-4321.643-254.094Zm-3.2-1.84a.414.414,0,0,0-.419.408.415.415,0,0,0,.419.41.414.414,0,0,0,.418-.41A.414.414,0,0,0-4324.84-255.934Zm0-3.478a.314.314,0,0,0-.314.314v2.236a.314.314,0,0,0,.314.314.314.314,0,0,0,.313-.314V-259.1A.314.314,0,0,0-4324.84-259.412Z" transform="translate(4336.84 268.5)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

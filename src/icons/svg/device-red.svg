@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="ic-红色电脑" transform="translate(-6036 -2176)">
+    <path id="路径_51" data-name="路径 51" d="M0,0H24V24H0Z" transform="translate(6036 2176)" fill="none"/>
+    <path id="路径_50" data-name="路径 50" d="M1.6,0H18.4A1.6,1.6,0,0,1,20,1.6V12.4A1.6,1.6,0,0,1,18.4,14H1.6A1.6,1.6,0,0,1,0,12.4V1.6A1.6,1.6,0,0,1,1.6,0Z" transform="translate(6038 2180)" fill="#835151"/>
+    <path id="路径_48" data-name="路径 48" d="M-.5-.5h6L8,2H-3Z" transform="translate(6045.5 2195)" fill="#493f6f"/>
+    <g id="组_52" data-name="组 52" transform="translate(0.4 0.4)">
+      <path id="路径_52" data-name="路径 52" d="M.5,0H16.7a.5.5,0,0,1,.5.5V10.7a.5.5,0,0,1-.5.5H.5a.5.5,0,0,1-.5-.5V.5A.5.5,0,0,1,.5,0Z" transform="translate(6039 2181)" fill="#dc3832"/>
+      <path id="路径_49" data-name="路径 49" d="M.478,0H16.722A.472.472,0,0,1,17.2.467V10.733a.472.472,0,0,1-.478.467C10.733,10.283,3.889,5.27,0,.467A.472.472,0,0,1,.478,0Z" transform="translate(6039 2181)" fill="#fff" opacity="0.24"/>
+    </g>
+  </g>
+</svg>

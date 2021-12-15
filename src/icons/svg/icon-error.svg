@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+  <g id="组_28" data-name="组 28" transform="translate(-977 -906)">
+    <circle id="椭圆_3" data-name="椭圆 3" cx="9" cy="9" r="9" transform="translate(977 906)" fill="#ff8a67"/>
+  </g>
+  <g id="组_30" data-name="组 30" transform="translate(3.333 3.333)">
+    <path id="路径_25" data-name="路径 25" d="M8,8l6,6" transform="translate(-5.333 -5.333)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="路径_26" data-name="路径 26" d="M8,14l6-6" transform="translate(-5.333 -5.333)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+  </g>
+</svg>

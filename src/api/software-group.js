@@ -2,16 +2,17 @@ import request from '@/utils/request'
 
 export function fetchList(query) {
   return request({
-    url: '/device/page',
+    url: '/software/group/page',
     method: 'get',
     params: query
   })
 }
 
-export function fetchDevice(id) {
+export function fetchArticle(id) {
   return request({
-    url: '/device/' + id,
-    method: 'get'
+    url: '/vue-element-admin/article/detail',
+    method: 'get',
+    params: { id }
   })
 }
 

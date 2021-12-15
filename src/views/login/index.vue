@@ -195,7 +195,7 @@ $cursor: #333333;
 .login-container {
   .el-input {
     display: inline-block;
-    height: 50px;
+    height: 40px;
     width: 85%;
 
     input {
@@ -205,7 +205,7 @@ $cursor: #333333;
       border-radius: 0px;
       padding: 12px 5px 12px 15px;
       color: $light_gray;
-      height: 50px;
+      height: 40px;
       caret-color: $cursor;
       &:-webkit-autofill {
         box-shadow: 0 0 0px 1000px $bg inset !important;
@@ -232,7 +232,6 @@ $light_gray:#eee;
   .title-container {
     position: relative;
     margin-top: 6%;
-
     .title {
       text-align: center;
       font-family: YouSheBiaoTiHei;
@@ -247,12 +246,12 @@ $light_gray:#eee;
   .login-form-container {
     position: fixed;
     top: 50%;
-    margin-top: -160px;
-    width: 472px;
-    height: 400px;
+    margin-top: -140px;
+    width: 420px;
+    height: 320px;
     background-color: rgba(6, 55, 116, 0.84);;
     border: solid 1px rgba(255, 255, 255, 0.24);
-    margin-left: 26%;
+    margin-left: 24%;
 
     @media screen and (max-width: 1200px){
       margin-left: 20%;
@@ -271,14 +270,14 @@ $light_gray:#eee;
     .login-form {
       margin-top: 36px;
       .el-form-item {
-        height: 50px;
+        height: 40px;
         background-color: #ffffff;
         border-radius: 4px;
-        margin-bottom: 44px;
+        margin-bottom: 36px;
       }
 
       .el-button {
-        height: 50px;
+        height: 40px;
         background-color: #198fff;
         border-radius: 4px;
       }

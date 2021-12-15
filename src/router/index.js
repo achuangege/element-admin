@@ -103,37 +103,51 @@ export const constantRoutes = [
     children: [
       {
         path: 'group',
-        component: () => import('@/views/documentation/index'),
+        component: () => import('@/views/software/group'),
         name: 'group',
         meta: { title: '软件类别', icon: 'software-category', affix: true }
       },
-      {
+      /* {
         path: 'package',
-        component: () => import('@/views/documentation/index'),
+        component: () => import('@/views/software/package'),
         name: 'package',
         meta: { title: '软件包', icon: 'software-package', affix: true }
-      },
+      }*/
       {
-        path: 'list',
-        component: () => import('@/views/documentation/index'),
-        name: 'list',
+        path: 'index',
+        component: () => import('@/views/software/index'),
+        name: 'index',
         meta: { title: '软件列表', icon: 'software-app', affix: true }
       },
       {
         path: 'adapt-rel',
-        component: () => import('@/views/documentation/index'),
+        component: () => import('@/views/software/adaptation'),
         name: 'adapt-rel',
         meta: { title: '软件适配关系', icon: 'software-link', affix: true }
       }
     ]
   },
   {
-    path: '/detect',
+    path: '/external',
+    component: Layout,
+    alwaysShow: true,
+    meta: { title: '外设管理', icon: 'tree', affix: true },
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/external/index'),
+        name: 'index',
+        meta: { title: '外设列表', icon: 'tree-table', affix: true }
+      }
+    ]
+  },
+  {
+    path: '/detection',
     component: Layout,
     children: [
       {
         path: 'index',
-        component: () => import('@/views/documentation/index'),
+        component: () => import('@/views/detection/index'),
         name: 'detect',
         meta: { title: '实时侦测', icon: 'detection', affix: true }
       }
@@ -198,7 +212,7 @@ export const constantRoutes = [
       }
     ]
   },
-  {
+  /* {
     path: '/documentation',
     component: Layout,
     children: [
@@ -222,7 +236,7 @@ export const constantRoutes = [
         meta: { title: 'Guide', icon: 'guide', noCache: true }
       }
     ]
-  },
+  },*/
   {
     path: '/profile',
     component: Layout,
@@ -244,7 +258,7 @@ export const constantRoutes = [
  * the routes that need to be dynamically loaded based on user roles
  */
 export const asyncRoutes = [
-  {
+  /* {
     path: '/permission',
     component: Layout,
     redirect: '/permission/page',
@@ -285,7 +299,7 @@ export const asyncRoutes = [
       }
     ]
   },
-
+*/
   {
     path: '/icon',
     component: Layout,
@@ -300,10 +314,10 @@ export const asyncRoutes = [
   },
 
   /** when your routing map is too long, you can split it into small modules **/
-  componentsRouter,
+  /* componentsRouter,
   chartsRouter,
   nestedRouter,
-  tableRouter,
+  tableRouter, */
 
   {
     path: '/example',
@@ -337,7 +351,7 @@ export const asyncRoutes = [
     ]
   },
 
-  {
+  /* {
     path: '/tab',
     component: Layout,
     children: [
@@ -348,9 +362,9 @@ export const asyncRoutes = [
         meta: { title: 'Tab', icon: 'tab' }
       }
     ]
-  },
+  },*/
 
-  {
+  /* {
     path: '/error',
     component: Layout,
     redirect: 'noRedirect',
@@ -386,9 +400,9 @@ export const asyncRoutes = [
         meta: { title: 'Error Log', icon: 'bug' }
       }
     ]
-  },
+  },*/
 
-  {
+  /* {
     path: '/excel',
     component: Layout,
     redirect: '/excel/export-excel',
@@ -485,9 +499,9 @@ export const asyncRoutes = [
         meta: { title: 'Clipboard', icon: 'clipboard' }
       }
     ]
-  },
+  },*/
 
-  {
+  /* {
     path: 'external-link',
     component: Layout,
     children: [
@@ -496,7 +510,7 @@ export const asyncRoutes = [
         meta: { title: 'External Link', icon: 'link' }
       }
     ]
-  },
+  },*/
 
   // 404 page must be placed at the end !!!
   { path: '*', redirect: '/404', hidden: true }
