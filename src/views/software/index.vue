@@ -30,7 +30,7 @@
             <svg-icon icon-class="icon-error" />
             未适配
           </span>
-          &nbsp;
+          &nbsp;<span class="spacer" />
           <el-switch
             v-if="scope.row.softType == 1"
             v-model="scope.row.adapted"
@@ -39,7 +39,7 @@
           <el-switch v-else v-model="scope.row.adapted" disabled @change="updateAdapted(scope.row)" />
         </template>
       </el-table-column>
-      <el-table-column align="left" label="运行环境" width="160">
+      <el-table-column align="center" label="运行环境" width="160">
         <template slot-scope="scope">
           <span v-if="scope.row.architecture == 0">X86</span>
           <span v-if="scope.row.architecture == 1">龙芯3A3000/4000</span>
@@ -53,6 +53,7 @@
       >
         <template slot-scope="scope">
           关
+          &nbsp;
           <el-switch
             v-if="scope.row.softType != 1"
             v-model="scope.row.globalControl"
@@ -74,6 +75,7 @@
             inactive-color="#ff4949"
             @change="updateGlobalControl(scope.row)"
           />
+          &nbsp;
           开
         </template>
       </el-table-column>

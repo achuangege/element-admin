@@ -13,9 +13,20 @@
           <el-option label="系统组件" :value="2" />
         </el-select>
       </el-form-item>
+      <el-form-item label="软件类型">
+        <el-select v-model="softwareForm.softType" placeholder="请选择软件类型">
+          <el-option label="应用软件" :value="1" />
+          <el-option label="系统组件" :value="2" />
+        </el-select>
+      </el-form-item>
       <el-form-item label="软件分类">
         <el-select v-model="softwareForm.groupId" placeholder="请选择软件分类">
-          <el-option v-for="group in softwareGroups" :key="group.groupId" :label="group.groupName" :value="group.groupId" />
+          <el-option
+            v-for="group in softwareGroups"
+            :key="group.groupId"
+            :label="group.groupName"
+            :value="group.groupId"
+          />
         </el-select>
       </el-form-item>
       <el-form-item label="软件运行架构">
@@ -24,6 +35,18 @@
           <el-option label="龙芯3A3000/4000" :value="1" />
           <el-option label="龙芯3A5000" :value="2" />
         </el-select>
+      </el-form-item>
+      <el-form-item label="适配情况">
+        <el-radio-group v-model="softwareForm.adapted">
+          <el-radio-button :label="true" value="true">已适配</el-radio-button>
+          <el-radio-button :label="false" value="false">未适配</el-radio-button>
+        </el-radio-group>
+      </el-form-item>
+      <el-form-item label="管控开关">
+        <el-radio-group v-model="softwareForm.globalControl">
+          <el-radio-button :label="true" value="true">开</el-radio-button>
+          <el-radio-button :label="false" value="false">关</el-radio-button>
+        </el-radio-group>
       </el-form-item>
     </el-form>
     <div style="text-align: right">
@@ -49,9 +72,7 @@ export default {
   },
   data() {
     return {
-      softwareForm: {
-
-      },
+      softwareForm: {},
       softwareGroups: []
     }
   },
