@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function fetchList(query) {
   return request({
-    url: '/software/page',
+    url: '/software/group/',
     method: 'get',
     params: query
   })
@@ -31,10 +31,10 @@ export function createArticle(data) {
   })
 }
 
-export function updateSoftware(data) {
+export function updateArticle(data) {
   return request({
-    url: '/software/' + data.softId,
-    method: 'put',
+    url: '/vue-element-admin/article/update',
+    method: 'post',
     data
   })
 }

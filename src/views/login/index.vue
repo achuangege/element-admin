@@ -3,50 +3,53 @@
     <div class="title-container">
       <h3 class="title">云芯信创国产化替代工程管控平台</h3>
     </div>
-    <div class="login-form-container">
-      <h3>登录系统</h3>
-      <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
-        <el-form-item prop="username">
-          <span class="svg-container">
-            <svg-icon icon-class="user" />
-          </span>
-          <el-input
-            ref="username"
-            v-model="loginForm.username"
-            placeholder="用户名"
-            name="username"
-            type="text"
-            tabindex="1"
-            autocomplete="on"
-          />
-        </el-form-item>
-
-        <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
-          <el-form-item prop="password">
+    <div class="login-form-wrapper">
+      <div class="login-form-container">
+        <h3>登录系统</h3>
+        <el-form ref="loginForm" :model="loginForm" :rules="loginRules" class="login-form" autocomplete="on" label-position="left">
+          <el-form-item prop="username">
             <span class="svg-container">
-              <svg-icon icon-class="password" />
+              <svg-icon icon-class="user" />
             </span>
             <el-input
-              :key="passwordType"
-              ref="password"
-              v-model="loginForm.password"
-              :type="passwordType"
-              placeholder="密码"
-              name="password"
-              tabindex="2"
+              ref="username"
+              v-model="loginForm.username"
+              placeholder="用户名"
+              name="username"
+              type="text"
+              tabindex="1"
               autocomplete="on"
-              @keyup.native="checkCapslock"
-              @blur="capsTooltip = false"
-              @keyup.enter.native="handleLogin"
             />
-            <span class="show-pwd" @click="showPwd">
-              <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
-            </span>
           </el-form-item>
-        </el-tooltip>
 
-        <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
-      </el-form>
+          <el-tooltip v-model="capsTooltip" content="Caps lock is On" placement="right" manual>
+            <el-form-item prop="password">
+              <span class="svg-container">
+                <svg-icon icon-class="password" />
+              </span>
+              <el-input
+                :key="passwordType"
+                ref="password"
+                v-model="loginForm.password"
+                :type="passwordType"
+                placeholder="密码"
+                name="password"
+                tabindex="2"
+                autocomplete="on"
+                @keyup.native="checkCapslock"
+                @blur="capsTooltip = false"
+                @keyup.enter.native="handleLogin"
+              />
+              <span class="show-pwd" @click="showPwd">
+                <svg-icon :icon-class="passwordType === 'password' ? 'eye' : 'eye-open'" />
+              </span>
+            </el-form-item>
+          </el-tooltip>
+
+          <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
+        </el-form>
+      </div>
+
     </div>
   </div>
 </template>
@@ -182,8 +185,8 @@ export default {
 /* Detail see https://github.com/PanJiaChen/vue-element-admin/pull/927 */
 
 $bg:#283443;
-$light_gray:#333333;
-$cursor: #333333;
+$light_gray:#ffffff;
+$cursor: #fffff f;
 
 @supports (-webkit-mask: none) and (not (cater-color: $cursor)) {
   .login-container .el-input input {
@@ -243,20 +246,27 @@ $light_gray:#eee;
     }
   }
 
-  .login-form-container {
-    position: fixed;
+  .login-form-wrapper {
     top: 50%;
+    left: 0;
+    right: 0;
+    position: fixed;
     margin-top: -140px;
+  }
+  .login-form-container {
+    margin: 0 auto;
     width: 420px;
     height: 320px;
-    background-color: rgba(6, 55, 116, 0.84);;
-    border: solid 1px rgba(255, 255, 255, 0.24);
-    margin-left: 24%;
+    background-color: rgba(9, 68, 137, 0.88);
+    box-shadow: 0px 20px 36px 0px
+    rgba(0, 0, 0, 0.2);
+    border-radius: 6px;
+    border: solid 1px rgba(255, 255, 255, 0.28);
 
-    @media screen and (max-width: 1200px){
-      margin-left: 20%;
-    }
     padding: 34px;
+    .svg-icon {
+      color: #ffffff;
+    }
     h3 {
       margin: 0;
       font-size: 24px;
@@ -274,6 +284,9 @@ $light_gray:#eee;
         background-color: #ffffff;
         border-radius: 4px;
         margin-bottom: 36px;
+        background-color: rgba(66, 140, 227, 0.56);
+        border-radius: 4px;
+        border: solid 1px rgba(255, 255, 255, 0.16);
       }
 
       .el-button {
@@ -296,7 +309,7 @@ $light_gray:#eee;
     }
 
     .svg-container {
-      padding: 6px 5px 6px 15px;
+      padding: 0 10px;
       color: $dark_gray;
       vertical-align: middle;
       width: 30px;

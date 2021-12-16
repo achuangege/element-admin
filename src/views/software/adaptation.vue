@@ -17,7 +17,6 @@
         <template>
           <el-link type="primary">编辑</el-link>
           &nbsp;
-          &nbsp;
           <el-link type="danger">删除</el-link>
         </template>
       </el-table-column>

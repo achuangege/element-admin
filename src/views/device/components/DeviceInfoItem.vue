@@ -2,11 +2,15 @@
   <div class="device-info-item" :class="{strip: hasStrip}">
     <div class="device-info-left">
       <h3 class="title">{{ data[0].name }}</h3>
-      <span class="content">{{ data[0].value }}</span>
+      <el-tooltip class="item" effect="dark" :content="data[0].value ? data[0].value : '暂无'" placement="top-start">
+        <span class="content">{{ data[0].value ? data[0].value : '暂无' }}</span>
+      </el-tooltip>
     </div>
     <div class="device-info-right">
       <h3 class="title">{{ data[1].name }}</h3>
-      <span class="content">{{ data[1].value }}</span>
+      <el-tooltip class="item" effect="dark" :content="data[1].value ? data[1].value : '暂无'" placement="top-start">
+        <span class="content">{{ data[1].value ? data[1].value : '暂无' }}</span>
+      </el-tooltip>
     </div>
   </div>
 </template>
@@ -49,6 +53,9 @@ export default {
   .content {
     color: #333333;
     margin-left: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 50%;
   }
 }
 

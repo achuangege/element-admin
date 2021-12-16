@@ -27,22 +27,22 @@
         <div class="device-info-body">
           <device-info-item
             :has-strip="true"
-            :data="[{name: '设备编号', value: 'c8681e358fb350238bc525c570bb7ea0'}, {name: '主板型号', value: '暂无'}, ]"
+            :data="[{name: '设备编号', value: device.deviceIdentifier}, {name: '主板型号', value: '暂无'}, ]"
           />
           <device-info-item
-            :data="[{name: '处理器', value: 'Intel I7'}, {name: '内存', value: '4GB'}, ]"
+            :data="[{name: '处理器', value: device.devProcessor}, {name: '内存', value: `${(device.memorySize / (1024 * 1024)).toFixed(2)}G`}, ]"
           />
           <device-info-item
             :has-strip="true"
-            :data="[{name: '显卡', value: '集成显卡'}, {name: '适配度', value: '30%'}, ]"
+            :data="[{name: '显卡', value: device.devGraphicsCard}, {name: '适配度', value: '30%'}, ]"
           />
           <device-info-item
-            :data="[{name: '硬盘', value: '256GB'}, {name: '操作系统', value: 'Windows10'}, ]"
+            :data="[{name: '硬盘', value: '256GB'}, {name: '操作系统', value: device.devOperatingSystem}, ]"
           />
 
           <device-info-item
             has-strip="true"
-            :data="[{name: '使用人', value: '教科办'}, {name: '联系方式', value: '13546387678'}, ]"
+            :data="[{name: '使用人', value: '教科办'}, {name: '联系方式', value: device.phone}, ]"
           />
 
         </div>
@@ -52,13 +52,13 @@
           <div class="device-info-header clearfix">
             <h3 class="fl">软件列表</h3>
             <span class="tip-name">已安装软件：</span>
-            <span class="tip-value">123</span>
+            <span class="tip-value">{{ device.softwares.length }}</span>
           </div>
           <div class="device-info-body">
             <el-table
               stripe
               :border="false"
-              :data="softwares"
+              :data="device.softwares"
               style="width: 100%"
             >
               <el-table-column
@@ -68,12 +68,21 @@
                 label="序号"
               />
               <el-table-column
-                prop="name"
+                prop="softName"
                 label="软件名称"
+                :show-overflow-tooltip="true"
               />
+              <el-table-column
+                label="类型"
+                align="center"
+                width="80"
+              >
+                系统组件
+              </el-table-column>
               <el-table-column
                 align="center"
                 label="适配情况"
+                width="100"
               >
                 <template slot-scope="scope">
                   <span v-if="scope.row.adapted">
@@ -88,12 +97,20 @@
               </el-table-column>
               <el-table-column
                 align="center"
-                width="160"
+                width="80"
                 label="管控开关"
               >
                 <template slot-scope="scope">
                   <el-switch
-                    v-model="scope.row.adapted"
+                    v-if="scope.row.globalControl"
+                    v-model="scope.row.globalControl"
+                    disabled
+                    active-color="#13ce66"
+                    inactive-color="#ff4949"
+                  />
+                  <el-switch
+                    v-else
+                    v-model="scope.row.control"
                     active-color="#13ce66"
                     inactive-color="#ff4949"
                   />
@@ -106,12 +123,12 @@
           <div class="device-info-header">
             <h3>外设列表</h3>
             <span class="tip-name">连接外设：</span>
-            <span class="tip-value">2</span>
+            <span class="tip-value">{{ device.externals.length }}</span>
           </div>
           <div class="device-info-body">
             <el-table
               stripe
-              :data="externals"
+              :data="device.externals"
               style="width: 100%"
             >
               <el-table-column
@@ -121,8 +138,9 @@
                 label="序号"
               />
               <el-table-column
-                prop="name"
+                prop="externalName"
                 label="外设名称"
+                :show-overflow-tooltip="true"
               />
               <el-table-column
                 align="center"
@@ -149,7 +167,7 @@
     <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
       <el-table-column align="center" label="序号" width="50" type="index" />
 
-      <el-table-column align="left" label="设备编号" width="180">
+      <el-table-column align="left" label="设备编号" width="180" :show-overflow-tooltip="true">
         <template slot-scope="scope">
           <!--          <svg-icon icon-class="computer-normal" style="font-size: 20px;" />-->
           <svg-icon icon-class="device-blue" style="font-size: 16px;" />
@@ -242,6 +260,24 @@ export default {
         { color: '#f56c6c', percentage: 60 },
         { color: '#5cb87a', percentage: 100 }
       ],
+      device: {
+        devComputerModel: null,
+        devExternalInterface: null,
+        devGraphicsCard: null,
+        devNetworkAdapter: null,
+        devOperatingSystem: null,
+        devProcessor: null,
+        devType: null,
+        devUseWay: null,
+        deviceId: 21885,
+        deviceIdentifier: null,
+        driveInfos: null,
+        ipAddresses: null,
+        memorySize: null,
+        phone: null,
+        softwares: [],
+        externals: []
+      },
       list: null,
       total: 0,
       listLoading: true,
@@ -305,6 +341,9 @@ export default {
       this.controlPanelVisible = true
       fetchDevice(deviceId).then(response => {
         console.log(response)
+        this.device = {
+          ...response.data
+        }
       })
     },
     mod2IsZero(num) {

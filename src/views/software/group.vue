@@ -5,6 +5,13 @@
 
       <el-table-column align="center" label="类别名称" prop="groupName" />
       <el-table-column align="center" label="添加时间" width="180" prop="createAt" />
+      <el-table-column align="center" label="操作" width="100">
+        <template>
+          <el-link type="primary">编辑</el-link>
+          &nbsp;
+          <el-link type="danger">删除</el-link>
+        </template>
+      </el-table-column>
     </el-table>
     <pagination
       v-show="total>0"

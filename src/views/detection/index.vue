@@ -3,7 +3,15 @@
     <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
       <el-table-column align="center" label="序号" width="50" type="index" />
 
-      <el-table-column align="center" width="300" :show-overflow-tooltip="true" label="设备编号" prop="deviceId" />
+      <el-table-column align="center" width="300" :show-overflow-tooltip="true" label="设备编号">
+        <template slot-scope="scope">
+          <!--          <svg-icon icon-class="computer-normal" style="font-size: 20px;" />-->
+          <svg-icon icon-class="device-blue" style="font-size: 16px;" />
+          <!--          <svg-icon icon-class="device-red" style="font-size: 16px;"/>-->
+          &nbsp;
+          <span>{{ scope.row.deviceId }}</span>
+        </template>
+      </el-table-column>
       <el-table-column align="center" :show-overflow-tooltip="true" label="事件类型">
         <template slot-scope="scope">
           <el-tag v-if="scope.row.eventType==1">打开软件</el-tag>

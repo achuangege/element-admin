@@ -3,32 +3,16 @@
     <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
       <el-table-column align="center" label="序号" width="50" type="index" />
 
-      <el-table-column align="left" width="300" :show-overflow-tooltip="true" label="软件名称" prop="softName" />
-      <el-table-column align="left" width="300" :show-overflow-tooltip="true" label="所属类别" prop="groupName" />
-      <el-table-column align="left" width="300" :show-overflow-tooltip="true" label="所属包" prop="packageName" />
-      <el-table-column align="left" width="300" :show-overflow-tooltip="true" label="软件名称" prop="softName" />
-      <el-table-column align="center" label="运行架构" width="100">
-        <template slot-scope="scope">
-          <el-tag v-if="scope.row.architecture == 0">X86</el-tag>
-          <el-tag v-if="scope.row.architecture == 1">MIPS</el-tag>
-          <el-tag v-if="scope.row.architecture == 2">LoongArch</el-tag>
-        </template>
-      </el-table-column>
-      <el-table-column
-        align="center"
-        width="160"
-        label="管控开关"
-      >
-        <template slot-scope="scope">
-          <el-switch
-            v-if="scope.row.architecture === 0"
-            v-model="scope.row.adapted"
-            active-color="#13ce66"
-            inactive-color="#ff4949"
-          />
-        </template>
-      </el-table-column>
+      <el-table-column align="left" :show-overflow-tooltip="true" label="软件名称" prop="externalName" />
+      <el-table-column align="left" :show-overflow-tooltip="true" label="所属类别" prop="externalType" />
       <el-table-column align="center" label="添加时间" width="180" prop="createAt" />
+      <el-table-column align="center" label="操作" width="100">
+        <template>
+          <el-link type="primary">编辑</el-link>
+          &nbsp;
+          <el-link type="danger">删除</el-link>
+        </template>
+      </el-table-column>
     </el-table>
     <pagination
       v-show="total>0"
