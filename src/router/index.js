@@ -7,10 +7,12 @@ Vue.use(Router)
 import Layout from '@/layout'
 
 /* Router Modules */
+/*
 import componentsRouter from './modules/components'
 import chartsRouter from './modules/charts'
 import tableRouter from './modules/table'
 import nestedRouter from './modules/nested'
+*/
 
 /**
  * Note: sub-menu only appear when route children.length >= 1
@@ -73,7 +75,8 @@ export const constantRoutes = [
   {
     path: '/',
     component: Layout,
-    redirect: '/dashboard',
+    // redirect: '/dashboard',
+    redirect: '/device/index',
     children: [
       {
         path: 'dashboard',
@@ -159,7 +162,7 @@ export const constantRoutes = [
     name: '计划拟制',
     alwaysShow: true,
     children: [
-      {
+      /* {
         path: 'index1',
         component: () => import('@/views/documentation/index'),
         name: 'index1',
@@ -188,7 +191,7 @@ export const constantRoutes = [
         component: () => import('@/views/documentation/index'),
         name: 'index5',
         meta: { title: '信创设备收旧利旧工作', affix: true }
-      }
+      }*/
     ],
     meta: { title: '计划拟制', icon: 'project', affix: true }
   },
@@ -200,15 +203,15 @@ export const constantRoutes = [
     children: [
       {
         path: 'index1',
-        component: () => import('@/views/documentation/index'),
+        component: () => import('@/views/user/index'),
         name: 'device',
-        meta: { title: '用户管理', icon: 'software-category', affix: true }
+        meta: { title: '用户管理', icon: 'user', affix: true }
       },
       {
         path: 'index2',
         component: () => import('@/views/documentation/index'),
         name: 'device',
-        meta: { title: '角色管理', icon: 'software-package', affix: true }
+        meta: { title: '角色管理', icon: 'el-icon-s-custom', affix: true }
       }
     ]
   },

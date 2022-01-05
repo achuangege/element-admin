@@ -1,5 +1,29 @@
 import request from '@/utils/request'
 
+export function fetchList(query) {
+  return request({
+    url: '/user/',
+    method: 'get',
+    params: query
+  })
+}
+
+export function fetchUser(id) {
+  return request({
+    url: '/user/' + id,
+    method: 'get',
+    params: { id }
+  })
+}
+
+export function updateUser(data) {
+  return request({
+    url: '/user/' + data.userId,
+    method: 'put',
+    data
+  })
+}
+
 export function login(data) {
   return request({
     url: '/user/login',

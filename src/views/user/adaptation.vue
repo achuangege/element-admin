@@ -3,25 +3,23 @@
     <el-table v-loading="listLoading" :data="list" border fit highlight-current-row style="width: 100%">
       <el-table-column align="center" label="序号" width="50" type="index" />
 
-      <el-table-column align="left" width="300" :show-overflow-tooltip="true" label="设备编号">
+      <el-table-column align="center" label="X86软件" prop="x86SoftwareName" />
+      <el-table-column align="center" label="国产软件" prop="localSoftwareName" />
+      <el-table-column align="center" label="国产软件运行架构">
         <template slot-scope="scope">
-          <!--          <svg-icon icon-class="computer-normal" style="font-size: 20px;" />-->
-          <svg-icon icon-class="device-blue" style="font-size: 16px;" />
-          <!--          <svg-icon icon-class="device-red" style="font-size: 16px;"/>-->
+          <el-tag v-if="scope.row.localSoftwareArch == 0">X86</el-tag>
+          <el-tag v-if="scope.row.localSoftwareArch == 1">MIPS</el-tag>
+          <el-tag v-if="scope.row.localSoftwareArch == 2">LoongArch</el-tag>
+        </template>
+      </el-table-column>
+      <el-table-column align="center" label="添加时间" width="180" prop="createAt" />
+      <el-table-column align="center" label="操作" width="100">
+        <template>
+          <el-link type="primary">编辑</el-link>
           &nbsp;
-          <span>{{ scope.row.deviceId }}</span>
+          <el-link type="danger">删除</el-link>
         </template>
       </el-table-column>
-      <el-table-column align="center" :show-overflow-tooltip="true" label="事件类型">
-        <template slot-scope="scope">
-          <el-tag v-if="scope.row.eventType==1">打开X86软件</el-tag>
-          <el-tag v-if="scope.row.eventType==2">心跳包</el-tag>
-          <el-tag v-if="scope.row.eventType==3">开机</el-tag>
-          <el-tag v-if="scope.row.eventType==4">退出软件</el-tag>
-        </template>
-      </el-table-column>
-      <el-table-column align="left" width="300" :show-overflow-tooltip="true" label="附加信息" prop="extraInfo" />
-      <el-table-column align="left" width="300" :show-overflow-tooltip="true" label="发生时间" prop="eventTime" />
     </el-table>
     <pagination
       v-show="total>0"
@@ -34,7 +32,7 @@
 </template>
 
 <script>
-import { fetchList } from '@/api/detection'
+import { fetchList } from '@/api/software-adaptation'
 import Pagination from '@/components/Pagination'
 
 export default {

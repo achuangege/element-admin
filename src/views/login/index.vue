@@ -1,7 +1,9 @@
 <template>
   <div class="login-container">
     <div class="title-container">
-      <h3 class="title">云芯信创国产化替代工程管控平台</h3>
+      <h3 class="title">
+        <img src="../../assets/images/login-title.png" alt="">
+      </h3>
     </div>
     <div class="login-form-wrapper">
       <div class="login-form-container">
@@ -46,7 +48,7 @@
             </el-form-item>
           </el-tooltip>
 
-          <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登录</el-button>
+          <el-button :loading="loading" type="primary" style="width:100%;margin-bottom:30px;" @click.native.prevent="handleLogin">登 录</el-button>
         </el-form>
       </div>
 
@@ -243,6 +245,8 @@ $light_gray:#eee;
       font-stretch: normal;
       letter-spacing: 3px;
       color: #ffffff;
+      //background-size: 100% 100%;
+      //background: url("../../assets/images/login-title.png");
     }
   }
 
@@ -256,7 +260,7 @@ $light_gray:#eee;
   .login-form-container {
     margin: 0 auto;
     width: 420px;
-    height: 320px;
+    height: 300px;
     background-color: rgba(9, 68, 137, 0.88);
     box-shadow: 0px 20px 36px 0px
     rgba(0, 0, 0, 0.2);
@@ -283,7 +287,7 @@ $light_gray:#eee;
         height: 40px;
         background-color: #ffffff;
         border-radius: 4px;
-        margin-bottom: 36px;
+        margin-bottom: 26px;
         background-color: rgba(66, 140, 227, 0.56);
         border-radius: 4px;
         border: solid 1px rgba(255, 255, 255, 0.16);

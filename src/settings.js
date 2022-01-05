@@ -1,5 +1,5 @@
 module.exports = {
-  title: 'Vue Element Admin',
+  title: '云芯信创国产化替代工程管控平台',
 
   /**
    * @type {boolean} true | false
