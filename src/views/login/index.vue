@@ -261,11 +261,12 @@ $light_gray:#eee;
     margin: 0 auto;
     width: 420px;
     height: 300px;
-    background-color: rgba(9, 68, 137, 0.88);
+    background-color: rgba(0, 0, 0, 0.48);
     box-shadow: 0px 20px 36px 0px
     rgba(0, 0, 0, 0.2);
     border-radius: 6px;
-    border: solid 1px rgba(255, 255, 255, 0.28);
+    border: solid 1px rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
 
     padding: 34px;
     .svg-icon {
@@ -279,6 +280,7 @@ $light_gray:#eee;
       line-height: 20px;
       text-align: center;
       color: #ffffff;
+      font-family: Source Han Sans CN;
     }
 
     .login-form {
@@ -288,15 +290,18 @@ $light_gray:#eee;
         background-color: #ffffff;
         border-radius: 4px;
         margin-bottom: 26px;
-        background-color: rgba(66, 140, 227, 0.56);
+        background-color: rgba(0, 0, 0, 0.36);
         border-radius: 4px;
-        border: solid 1px rgba(255, 255, 255, 0.16);
+        border: solid 1px rgba(0, 0, 0, 0.25);
       }
 
       .el-button {
         height: 40px;
-        background-color: #198fff;
+        background-color: #de1f1f;
+        box-shadow: 0px 3px 6px 0px
+        rgba(0, 0, 0, 0.08);
         border-radius: 4px;
+        border: none;
       }
     }
 

@@ -98,7 +98,7 @@
           />
           <device-info-item
             :has-strip="true"
-              :data="[{name: '显卡', value: device.devGraphicsCard}, {name: '适配度', value: `${device.adaptProgress}%`}, ]"
+            :data="[{name: '显卡', value: device.devGraphicsCard}, {name: '适配度', value: `${device.adaptProgress}%`}, ]"
           />
           <device-info-item
             :data="[{name: '存储信息', value: formatStorage(device.driveInfos)}, {name: '操作系统', value: device.devOperatingSystem}, ]"
