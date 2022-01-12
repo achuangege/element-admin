@@ -16,9 +16,15 @@
           <span>{{ scope.row.department }}</span>
         </template>
       </el-table-column>
+      <el-table-column min-width="120px" align="left" label="使用部门" :show-overflow-tooltip="true">
+        <template slot-scope="scope">
+          <span>{{ scope.row.branch }}</span>
+        </template>
+      </el-table-column>
       <el-table-column align="center" min-width="120" label="适配进度">
         <template slot-scope="scope">
           <el-progress :percentage="parseInt(scope.row.adaptProgress)" :color="progressColor" />
+          <el-progress :percentage="parseInt(scope.row.externalAdaptProgress)" :color="progressColor" />
         </template>
       </el-table-column>
       <el-table-column min-width="80" align="center" label="软件数量">
