@@ -23,8 +23,8 @@
       </el-table-column>
       <el-table-column align="center" min-width="120" label="适配进度">
         <template slot-scope="scope">
-          <el-progress :percentage="parseInt(scope.row.adaptProgress)" :color="progressColor" />
-          <el-progress :percentage="parseInt(scope.row.externalAdaptProgress)" :color="progressColor" />
+          软件：<el-progress :percentage="parseInt(scope.row.adaptProgress)" :color="progressColor" />
+          <!--          外设：<el-progress :percentage="parseInt(scope.row.externalAdaptProgress)" :color="progressColor" />-->
         </template>
       </el-table-column>
       <el-table-column min-width="80" align="center" label="软件数量">
